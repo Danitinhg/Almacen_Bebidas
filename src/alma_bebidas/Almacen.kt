@@ -2,35 +2,63 @@ package alma_bebidas
 
 class Almacen {
 
-    val bebida1 = Bebida(1, 330, 2.20, "Fanta", true, porcentajeAzucar = 12, descuento = true)
-    val bebida2 = Bebida(2, 330, 2.20, "Sprite", true, porcentajeAzucar = 12, descuento = true)
-    val bebida3 = Bebida(3, 330, 2.20, "CocaCola", true, porcentajeAzucar = 12, descuento = true)
-    val bebida4 = Bebida(4, 220, 2.20, "Agua", false, "Manantial")
-    val bebida5 = Bebida(5, 330, 2.20, "Pepsi", true, porcentajeAzucar = 12, descuento = true)
-    val bebida6 = Bebida(6, 330, 2.20, "Dr Pepper", true, porcentajeAzucar = 12, descuento = true)
-
     val mtrzBebidas = Array(5)  { Array<Bebida?>(5) {null} }
 
-    fun agregarBebida (id: Int) {
+    fun agregarBebida (bebid: Bebida) {
+
         for (i in mtrzBebidas.indices) {
             for (j in mtrzBebidas[i].indices) {
-                // Si ya existe una bebida con el mismo ID en la matriz, no agregarla
-                if (mtrzBebidas[i][j]?.id == Bebida.id) {
-                    println("Ya existe una bebida este id")
-                } else if (mtrzBebidas[i][j] == null) {
-                    mtrzBebidas[i][j] = be
-
+                if (mtrzBebidas[i][j]?.id == bebid.id) {
+                    println("Ya existe una bebida con este id")
+                } else  {
+                    for (i in mtrzBebidas.indices) {
+                        for (j in mtrzBebidas.indices) {
+                            if (mtrzBebidas[i][j] == null) {
+                                mtrzBebidas[i][j]
+                                println("Bebida con el ${bebid.id} agregada")
+                            }
+                        }
+                    }
                 }
             }
         }
     }
 
-    fun eliminarBebida () {
-
+    fun eliminarBebida (bebid: Bebida) {
+        for (i in mtrzBebidas.indices) {
+            for (j in mtrzBebidas[i].indices) {
+                if (mtrzBebidas[i][j]?.id == bebid.id) {
+                    mtrzBebidas[i][j] == null
+                    println("Bebida con el ${bebid.id} eliminada")
+                } else {
+                    println("No hay bebidas con este id")
+                }
+            }
+        }
     }
 
-    fun mostrarBebida () {
+    fun mostrarBebida (bebid: Bebida) {
 
+        for (i in mtrzBebidas.indices) {
+            for (j in mtrzBebidas[i].indices) {
+                if (mtrzBebidas[i][j] != null) {
+                    if (bebid.refresco) {
+                        println("id: ${bebid.id}")
+                        println("Litros: ${bebid.litros}")
+                        println("Precio: ${bebid.precio}")
+                        println("Marca: ${bebid.marca}")
+                        println("Porcentaje de azúcar: ${bebid.porcentajeAzucar}")
+                        println("Descuento: ${bebid.descuento}")
+                    } else {
+                        println("id: ${bebid.id}")
+                        println("Centilitros: ${bebid.litros}")
+                        println("Precio: ${bebid.precio}")
+                        println("Marca: ${bebid.litros}")
+                        println("Origen: ${bebid.origen}")
+                    }
+                }
+            }
+        }
     }
 
     fun calcularPrecio () {

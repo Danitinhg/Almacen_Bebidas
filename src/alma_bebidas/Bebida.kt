@@ -2,7 +2,7 @@ package alma_bebidas
 
 class Bebida(
     val id: Int,
-    val cl: Int,
+    val litros: Double,
     val precio: Double,
     val marca: String,
     val refresco: Boolean,
@@ -14,8 +14,3 @@ class Bebida(
 
 
 }
-
-
-
-
-
