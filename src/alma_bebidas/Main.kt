@@ -1,7 +1,8 @@
 package alma_bebidas
 
-class Main {
-    fun main()  {
-        println("hola!")
-    }
+fun main()  {
+    println("hola!")
+
 }
+
+

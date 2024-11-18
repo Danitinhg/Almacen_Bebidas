@@ -2,17 +2,27 @@ package alma_bebidas
 
 class Almacen {
 
-    val Bebida1 = Bebida(1,330, true, "Nestea", "Fuente del pueblo", 23,false)
-    val Bebida2 = Bebida(2,330, false, "Agua", "Fuente del pueblo", 23,false)
-    val Bebida3 = Bebida(3,330, true, "Fanta", "Manantial", 23,false)
-    val Bebida4 = Bebida(4,330, true, "CocaCola", "Fuente del pueblo", 23,false)
-    val Bebida5 = Bebida(5,330, true, "Kas", "Fuente del pueblo", 23,false)
-    val Bebida6 = Bebida(6,330, true, "Monster", "Fuente del pueblo", 23,false)
+    val bebida1 = Bebida(1, 330, 2.20, "Fanta", true, porcentajeAzucar = 12, descuento = true)
+    val bebida2 = Bebida(2, 330, 2.20, "Sprite", true, porcentajeAzucar = 12, descuento = true)
+    val bebida3 = Bebida(3, 330, 2.20, "CocaCola", true, porcentajeAzucar = 12, descuento = true)
+    val bebida4 = Bebida(4, 220, 2.20, "Agua", false, "Manantial")
+    val bebida5 = Bebida(5, 330, 2.20, "Pepsi", true, porcentajeAzucar = 12, descuento = true)
+    val bebida6 = Bebida(6, 330, 2.20, "Dr Pepper", true, porcentajeAzucar = 12, descuento = true)
 
-    var arrayList: ArrayList<Bebida> = arrayListOf<Bebida>()
+    val mtrzBebidas = Array(5)  { Array<Bebida?>(5) {null} }
 
-    fun agregarBebida () {
+    fun agregarBebida (id: Int) {
+        for (i in mtrzBebidas.indices) {
+            for (j in mtrzBebidas[i].indices) {
+                // Si ya existe una bebida con el mismo ID en la matriz, no agregarla
+                if (mtrzBebidas[i][j]?.id == Bebida.id) {
+                    println("Ya existe una bebida este id")
+                } else if (mtrzBebidas[i][j] == null) {
+                    mtrzBebidas[i][j] = be
 
+                }
+            }
+        }
     }
 
     fun eliminarBebida () {
@@ -34,5 +44,6 @@ class Almacen {
     fun calcularPrecioColumna() {
 
     }
+
 }
 
