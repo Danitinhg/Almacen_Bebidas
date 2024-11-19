@@ -10,18 +10,21 @@ class Almacen {
             for (j in mtrzBebidas[i].indices) {
                 if (mtrzBebidas[i][j]?.id == bebid.id) {
                     println("Ya existe una bebida con este id")
-                } else  {
-                    for (i in mtrzBebidas.indices) {
-                        for (j in mtrzBebidas.indices) {
-                            if (mtrzBebidas[i][j] == null) {
-                                mtrzBebidas[i][j]
-                                println("Bebida con el ${bebid.id} agregada")
-                            }
-                        }
-                    }
+                    return
+                }
+
+            }
+        }
+        for (i in mtrzBebidas.indices) {
+            for (j in mtrzBebidas[i].indices) {
+                if (mtrzBebidas[i][j] == null) {
+                    mtrzBebidas[i][j] = bebid
+                    println("Bebida con el ${bebid.id} agregada")
+                    return
                 }
             }
         }
+
     }
 
     fun eliminarBebida (bebid: Bebida) {

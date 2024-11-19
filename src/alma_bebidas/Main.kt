@@ -12,6 +12,8 @@ fun main()  {
 
     almacen1.agregarBebida(bebida1)
     almacen1.mostrarBebida(bebida1)
+    almacen1.eliminarBebida(bebida1)
+    almacen1.mostrarBebida(bebida1)
 
 }
 
