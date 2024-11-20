@@ -10,7 +10,4 @@ class Bebida(
     val porcentajeAzucar: Int? = null,
     val descuento: Boolean = false
 
-) {
-
-
-}
+)
